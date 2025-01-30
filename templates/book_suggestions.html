@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+    <h2>Book Suggestions</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.student_name.label }} {{ form.student_name() }}
+        </div>
+        <div>
+            {{ form.student_id.label }} {{ form.student_id() }}
+        </div>
+        <div>
+            {{ form.department.label }} {{ form.department() }}
+        </div>
+        <div>
+            {{ form.year.label }} {{ form.year() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+
+    {% if suggestions %}
+        <h3>Suggested Books:</h3>
+        <ul class="suggestions">
+            {% for book in suggestions %}
+                <li>{{ book.name }} by {{ book.author }} ({{ book.department }}, Year {{ book.year }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
+

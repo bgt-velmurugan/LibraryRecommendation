@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+    <h2>Add Book</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.name.label }} {{ form.name() }}
+        </div>
+        <div>
+            {{ form.author.label }} {{ form.author() }}
+        </div>
+        <div>
+            {{ form.serial_number.label }} {{ form.serial_number() }}
+        </div>
+        <div>
+            {{ form.department.label }} {{ form.department() }}
+        </div>
+        <div>
+            {{ form.major.label }} {{ form.major() }}
+        </div>
+        <div>
+            {{ form.year.label }} {{ form.year() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
+
